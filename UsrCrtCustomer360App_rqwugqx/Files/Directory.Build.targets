@@ -1,0 +1,19 @@
+<Project>
+	<ItemGroup Condition="'$(PkgPath)' != ''">
+		<Compile Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Assemblies/**" />
+		<Compile Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Data/**" />
+		<Compile Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/SqlScripts/**" />
+		<Compile Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Schemas\**" />
+		<Compile Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Resources/**" />
+		<EmbeddedResource Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Assemblies/**" />
+		<EmbeddedResource Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Data/**" />
+		<EmbeddedResource Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/SqlScripts/**" />
+		<EmbeddedResource Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Schemas/**" />
+		<EmbeddedResource Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Resources/**" />
+		<None Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Assemblies/**" />
+		<None Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Data/**" />
+		<None Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/SqlScripts/**" />
+		<None Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Schemas/**" />
+		<None Remove="$(PkgPath)/UsrCrtCustomer360App_rqwugqx/Resources/**" />
+  </ItemGroup>
+</Project>
