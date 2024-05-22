@@ -92,6 +92,59 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
+				"name": "Button_7sn82ha",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(Button_7sn82ha_caption)#",
+					"color": "primary",
+					"disabled": false,
+					"size": "medium",
+					"iconPosition": "left-icon",
+					"visible": true,
+					"icon": "horn-button-icon",
+					"menuItems": [],
+					"clickMode": "menu"
+				},
+				"parentName": "CardToggleContainer",
+				"propertyName": "items",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "MenuItem_iebjqkk",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(MenuItem_iebjqkk_caption)#",
+					"items": []
+				},
+				"parentName": "Button_7sn82ha",
+				"propertyName": "menuItems",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "MenuItemCalcAvgPrice",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(MenuItem_0ef5c2j_caption)#",
+					"visible": true,
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrCalcAverageRealtyPriceProcess",
+							"processRunType": "ForTheSelectedPage",
+							"showNotification": true,
+							"recordIdProcessParameterName": "RealtyIdParameter"
+						}
+					},
+					"icon": "calculator-button-icon"
+				},
+				"parentName": "MenuItem_iebjqkk",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
 				"name": "ComboBox_Type",
 				"values": {
 					"layoutConfig": {
@@ -275,23 +328,6 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 			},
 			{
 				"operation": "insert",
-				"name": "addRecord_c2dzu0o",
-				"values": {
-					"code": "addRecord",
-					"type": "crt.ComboboxSearchTextAction",
-					"icon": "combobox-add-new",
-					"caption": "#ResourceString(addRecord_c2dzu0o_caption)#",
-					"clicked": {
-						"request": "crt.CreateRecordFromLookupRequest",
-						"params": {}
-					}
-				},
-				"parentName": "UsrCountry",
-				"propertyName": "listActions",
-				"index": 0
-			},
-			{
-				"operation": "insert",
 				"name": "CommisssionPercent",
 				"values": {
 					"layoutConfig": {
@@ -328,28 +364,15 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 					"control": "$PDS_UsrCity_8juj8jd",
 					"listActions": [],
 					"showValueAsLink": true,
-					"controlActions": []
+					"controlActions": [],
+					"visible": true,
+					"readonly": false,
+					"placeholder": "",
+					"tooltip": ""
 				},
 				"parentName": "GeneralInfoTabContainer",
 				"propertyName": "items",
 				"index": 6
-			},
-			{
-				"operation": "insert",
-				"name": "addRecord_3ya7zqk",
-				"values": {
-					"code": "addRecord",
-					"type": "crt.ComboboxSearchTextAction",
-					"icon": "combobox-add-new",
-					"caption": "#ResourceString(addRecord_3ya7zqk_caption)#",
-					"clicked": {
-						"request": "crt.CreateRecordFromLookupRequest",
-						"params": {}
-					}
-				},
-				"parentName": "UsrCity",
-				"propertyName": "listActions",
-				"index": 0
 			},
 			{
 				"operation": "insert",
@@ -609,19 +632,14 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"id": "76529ba6-0d80-7367-a880-d2fab79f2d7b",
 							"code": "GridDetail_tl7fwfkDS_UsrComment",
 							"caption": "#ResourceString(GridDetail_tl7fwfkDS_UsrComment)#",
-							"dataValueType": 28
+							"dataValueType": 28,
+							"width": 144
 						},
 						{
 							"id": "c5489e6a-fe2a-2f25-0b2e-d1f1b5f1b38e",
 							"code": "GridDetail_tl7fwfkDS_CreatedOn",
 							"caption": "#ResourceString(GridDetail_tl7fwfkDS_CreatedOn)#",
 							"dataValueType": 7
-						},
-						{
-							"id": "90a55f46-915e-a0c3-60ec-0883bda57240",
-							"code": "GridDetail_tl7fwfkDS_UsrParentRealty",
-							"caption": "#ResourceString(GridDetail_tl7fwfkDS_UsrParentRealty)#",
-							"dataValueType": 10
 						},
 						{
 							"id": "2d394a9c-3a1d-8826-9981-11f55aa85d25",
@@ -635,6 +653,21 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 				"parentName": "GridContainer_8u4f6bn",
 				"propertyName": "items",
 				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "Button_qi2c48n",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(Button_qi2c48n_caption)#",
+					"color": "default",
+					"disabled": false,
+					"size": "large",
+					"iconPosition": "only-text"
+				},
+				"parentName": "CenterContainer",
+				"propertyName": "items",
+				"index": 1
 			},
 			{
 				"operation": "insert",
@@ -922,8 +955,8 @@ define("UsrRealty_FormPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"sortingConfig": {
 								"default": [
 									{
-										"direction": "asc",
-										"columnName": "UsrComment"
+										"direction": "desc",
+										"columnName": "UsrParentRealty"
 									}
 								]
 							}

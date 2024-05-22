@@ -3,6 +3,13 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 		viewConfigDiff: /**SCHEMA_VIEW_CONFIG_DIFF*/[
 			{
 				"operation": "merge",
+				"name": "AddButton",
+				"values": {
+					"size": "large"
+				}
+			},
+			{
+				"operation": "merge",
 				"name": "MenuItem_ImportFromExcel",
 				"values": {
 					"clicked": {
@@ -55,8 +62,134 @@ define("UsrRealty_ListPage", /**SCHEMA_DEPS*/[]/**SCHEMA_DEPS*/, function/**SCHE
 							"caption": "#ResourceString(PDS_CreatedOn)#",
 							"dataValueType": 7
 						}
-					]
+					],
+					"selectionState": "$DataTable_SelectionState",
+					"_selectionOptions": {
+						"attribute": "DataTable_SelectionState"
+					},
+					"bulkActions": []
 				}
+			},
+			{
+				"operation": "insert",
+				"name": "Button_z8bz422",
+				"values": {
+					"type": "crt.Button",
+					"caption": "#ResourceString(Button_z8bz422_caption)#",
+					"color": "default",
+					"disabled": false,
+					"size": "large",
+					"iconPosition": "only-text",
+					"visible": true,
+					"clicked": {
+						"request": "crt.RunBusinessProcessRequest",
+						"params": {
+							"processName": "UsrCalcAverageRealtyPriceProcess",
+							"processRunType": "ForTheSelectedRecords",
+							"showNotification": true,
+							"dataSourceName": "PDS",
+							"parameterMappings": {
+								"RealtyIdParameter": "Id"
+							},
+							"filters": "$Items | crt.ToCollectionFilters : 'Items' : $DataTable_SelectionState | crt.SkipIfSelectionEmpty : $DataTable_SelectionState",
+							"sorting": "$ItemsSorting",
+							"selectionStateAttributeName": "DataTable_SelectionState"
+						}
+					},
+					"clickMode": "default"
+				},
+				"parentName": "RightFilterContainer",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "DataTable_AddTagsBulkAction",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "Add tag",
+					"icon": "tag-icon",
+					"clicked": {
+						"request": "crt.AddTagsInRecordsRequest",
+						"params": {
+							"dataSourceName": "PDS",
+							"filters": "$Items | crt.ToCollectionFilters : 'Items' : $DataTable_SelectionState | crt.SkipIfSelectionEmpty : $DataTable_SelectionState"
+						}
+					},
+					"items": []
+				},
+				"parentName": "DataTable",
+				"propertyName": "bulkActions",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "DataTable_RemoveTagsBulkAction",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "Remove tag",
+					"icon": "delete-button-icon",
+					"clicked": {
+						"request": "crt.RemoveTagsInRecordsRequest",
+						"params": {
+							"dataSourceName": "PDS",
+							"filters": "$Items | crt.ToCollectionFilters : 'Items' : $DataTable_SelectionState | crt.SkipIfSelectionEmpty : $DataTable_SelectionState"
+						}
+					}
+				},
+				"parentName": "DataTable_AddTagsBulkAction",
+				"propertyName": "items",
+				"index": 0
+			},
+			{
+				"operation": "insert",
+				"name": "DataTable_ExportToExcelBulkAction",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "Export to Excel",
+					"icon": "export-button-icon",
+					"clicked": {
+						"request": "crt.ExportDataGridToExcelRequest",
+						"params": {
+							"viewName": "DataTable",
+							"filters": "$Items | crt.ToCollectionFilters : 'Items' : $DataTable_SelectionState | crt.SkipIfSelectionEmpty : $DataTable_SelectionState"
+						}
+					}
+				},
+				"parentName": "DataTable",
+				"propertyName": "bulkActions",
+				"index": 1
+			},
+			{
+				"operation": "insert",
+				"name": "DataTable_DeleteBulkAction",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "Delete",
+					"icon": "delete-button-icon",
+					"clicked": {
+						"request": "crt.DeleteRecordsRequest",
+						"params": {
+							"dataSourceName": "PDS",
+							"filters": "$Items | crt.ToCollectionFilters : 'Items' : $DataTable_SelectionState | crt.SkipIfSelectionEmpty : $DataTable_SelectionState"
+						}
+					}
+				},
+				"parentName": "DataTable",
+				"propertyName": "bulkActions",
+				"index": 2
+			},
+			{
+				"operation": "insert",
+				"name": "MenuItem_xmipbth",
+				"values": {
+					"type": "crt.MenuItem",
+					"caption": "#ResourceString(MenuItem_xmipbth_caption)#",
+					"visible": true
+				},
+				"parentName": "DataTable",
+				"propertyName": "bulkActions",
+				"index": 3
 			}
 		]/**SCHEMA_VIEW_CONFIG_DIFF*/,
 		viewModelConfigDiff: /**SCHEMA_VIEW_MODEL_CONFIG_DIFF*/[
