@@ -2,12 +2,13 @@
   "Descriptor": {
     "UId": "bcfe9383-6f36-469a-89df-670d1a401b6d",
     "Name": "UsrCalcAverageRealtyPriceProcessUsrRealty4",
-    "ModifiedOnUtc": "\/Date(1716458398000)\/",
+    "ModifiedOnUtc": "\/Date(1716458399000)\/",
     "Parent": {
       "UId": "dd6a24ec-e8b1-4294-a1a1-7e39d57b1125",
       "Name": "UsrCalcAverageRealtyPriceProcess"
     },
     "ManagerName": "ProcessSchemaManager",
-    "Caption": "Calculate avarage realty price"
+    "Caption": "Calculate avarage realty price",
+    "DependsOn": []
   }
 }
