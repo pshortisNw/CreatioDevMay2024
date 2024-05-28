@@ -23,6 +23,9 @@
 			<Item Name="LocalizableStrings.Label_hva7wo4_caption.Value" Value="New label" />
 			<Item Name="LocalizableStrings.MenuItem_0ef5c2j_caption.Value" Value="Calculate Avareage Price " />
 			<Item Name="LocalizableStrings.MenuItem_iebjqkk_caption.Value" Value="Menu item" />
+			<Item Name="LocalizableStrings.MenuItem_ipp1jzk_caption.Value" Value="Menu item" />
+			<Item Name="LocalizableStrings.MenuItem_ojvy6sp_caption.Value" Value="Calculate Max Price" />
+			<Item Name="LocalizableStrings.MenuItem_xwgrmp9_caption.Value" Value="Calculate Max price" />
 			<Item Name="LocalizableStrings.NumberInput_nhghlbx_label.Value" Value="Number" />
 			<Item Name="LocalizableStrings.PriceCannotBeLess.Value" Value="Price cannot be less than 50.0" />
 			<Item Name="LocalizableStrings.TabContainer_gwkgqwq_caption.Value" Value="New tab" />
